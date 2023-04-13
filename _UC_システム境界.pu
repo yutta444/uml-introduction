@@ -1,0 +1,13 @@
+@startuml ユースケース図
+' left to right direction
+actor 利用者 #99DDDD;line:black;line.bold;
+package 携帯システム {
+usecase 連絡先を登録する
+usecase 電話をかける
+usecase 写真を撮る
+
+}
+利用者 --> 連絡先を登録する
+利用者 --> 電話をかける
+利用者 --> 写真を撮る
+@enduml
