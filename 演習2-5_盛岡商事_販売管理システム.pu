@@ -1,0 +1,10 @@
+@startuml ユースケース図
+left to right direction
+actor 販売者 
+rectangle 販売管理 {
+usecase 注文商品
+usecase 出荷状況
+}
+販売者 --> 注文商品 
+販売者 --> 出荷状況
+@enduml
