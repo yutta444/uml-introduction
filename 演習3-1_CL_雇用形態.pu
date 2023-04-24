@@ -1,0 +1,9 @@
+@startuml 雇用
+class 従業員{
+---
++ Walk:
++ {abstract} eat():int
++ {abstract} cry():void
+}
+
+@enduml
