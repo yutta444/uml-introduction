@@ -1,9 +1,28 @@
-@startuml 雇用
-class 従業員{
----
-+ Walk:
-+ {abstract} eat():int
-+ {abstract} cry():void
+@startuml
+
+class 従業員
+
+abstract class 雇用形態 {
+    +労働時間を報告する()
+    +報酬を受け取る()
 }
+
+class 派遣 {
+    +契約期間を報告する()
+}
+
+class 契約社員 {
+    +契約期間を報告する()
+}
+
+class 正社員 {
+    +勤務年数を報告する()
+}
+
+雇用形態 <|-- 派遣
+雇用形態 <|-- 契約社員
+雇用形態 <|-- 正社員
+
+従業員 *-- 雇用形態
 
 @enduml
