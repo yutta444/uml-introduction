@@ -1,0 +1,27 @@
+@startuml 演習3-6
+    object "<u>資格リスト:資格</u>" as quadrilateral{
+        名称
+    }
+
+    object "社員情報:社員" as takahashi{
+        氏名=高橋洋平
+        資格名称=情報処理安全確保支援士
+        申請日=2020年10月21日
+    }
+
+    object "社員情報:社員" as higuchi{
+        氏名=樋口正之
+        資格名称=情報処理安全確保支援士
+        申請日
+    }
+
+    object "社員情報:社員" as takahashi{
+        氏名=高橋洋平
+        資格名称=LinuC試験Level1
+        申請日=2021年3月28日
+    }
+
+    quadrilateral -- takahashi
+    quadrilateral -- higuchi
+    quadrilateral -- takahashi
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+title オブジェクト図
+
+class 注文 {
+    -注文番号 : int
+    -注文日時 : Date
+    -顧客名 : string
+    -注文明細 : List<注文明細>
+    +注文商品(商品名 : string, 型式 : string, 数量 : int)
+}
+
+class 注文明細 {
+    -商品名 : string
+    -型式 : string
+    -数量 : int
+}
+
+class 商品 {
+    -商品名 : string
+    -型式 : string
+}
+
+class 顧客 {
+    -高橋洋平
+    -髙田理恵
+    -大坪直之
+}
+
+注文 --> 注文明細
+注文明細 --> 商品
+@enduml
