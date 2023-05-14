@@ -1,0 +1,14 @@
+@startuml
+actor User
+participant Browser
+participant WebServer
+participant ImageServer
+
+User -> Browser: 画像リンクをクリック
+Browser -> WebServer: 画像ファイル名のリクエスト送信
+WebServer -> ImageServer: 画像ファイル名のリクエスト送信
+ImageServer --> WebServer: 画像ファイル送信
+WebServer -> Browser: 画像ファイルのレスポンス送信
+Browser -> Browser: 画像表示
+
+@enduml
