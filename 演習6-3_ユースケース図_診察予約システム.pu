@@ -1,0 +1,16 @@
+@startuml 診察予約ユースケース
+left to right direction
+actor ユーザ#DDDDDD;line:black;line.bold;
+actor 看護師#DDDDDD;line:black;line.bold;
+rectangle 医院診察予約{
+usecase メニュー
+usecase 予約と確認
+usecase あなたの順番
+usecase 今の順番
+}
+ユーザ --> 予約と確認
+ユーザ --> あなたの順番
+ユーザ --> 今の順番
+ユーザ -->メニュー
+今の順番 <-- 看護師
+@enduml
