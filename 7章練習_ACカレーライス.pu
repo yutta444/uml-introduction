@@ -1,0 +1,25 @@
+@startuml 並列処理
+title フォークで並列処理
+start
+
+:手を洗う;
+fork
+:お米を炊く
+:野菜を洗う;
+fork
+:野菜を切る;
+fork again
+:手を洗う;
+end fork
+:野菜を煮込む;
+fork
+:1→i;
+while (i < 10)
+:カレールー+1;
+endwhile
+:ルー完成;
+end fork
+:全てを集結
+:カレーライス完成;
+stop
+@enduml
