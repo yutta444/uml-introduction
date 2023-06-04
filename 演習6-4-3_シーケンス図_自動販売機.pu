@@ -1,0 +1,22 @@
+@startuml 自動販売機
+hide footbox
+Actor 客 as user
+participant 料金装置 as tolldevice <<boundary>>
+participant ボタン as button <<entity>>
+participant ベンダー装置 as vendor <<control>>
+mainframe sd 自動販売機
+user -> tolldevice : 1:料金を投入する
+activate tolldevice
+activate button
+tolldevice ->  button : 1.1:料金を確認
+user -> button : 2.1:ボタンを押す
+button -> vendor : 2.2:選択されたドリンクを伝える
+activate vendor
+vendor -> vendor : 3.1:ドリンク排出
+deactivate button
+
+deactivate tolldevice
+vendor -> user : 3.2:ドリンク受け取り
+
+
+@enduml

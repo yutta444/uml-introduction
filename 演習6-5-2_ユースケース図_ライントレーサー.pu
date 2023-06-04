@@ -1,0 +1,12 @@
+@startuml
+
+actor ユーザー as User
+actor ライントレーサー as LineTracer
+
+User --> (システム起動)
+User --> (システム停止)
+LineTracer --> (右旋回開始)
+LineTracer --> (左旋回開始)
+LineTracer --> (進行)
+
+@enduml

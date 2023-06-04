@@ -1,0 +1,15 @@
+@startuml 自動販売機
+left to right direction
+actor 客 #CCBB00;line:blue;line.bold;
+actor ベンダー #CCBB00;line:Red;line.bold;
+rectangle  自動販売機 {
+usecase 料金投入
+usecase ボタンを押す
+usecase ドリンク排出
+}
+客 --> 料金投入
+料金投入 <. ボタンを押す : <<include>>
+ボタンを押す <. ドリンク排出 : <<include>>
+ベンダー <-right- 料金投入: 料金回収
+ベンダー --> ドリンク排出 : ドリンク補充
+@enduml
