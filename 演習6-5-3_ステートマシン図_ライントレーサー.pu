@@ -1,31 +1,27 @@
-@startuml
+[*] --> PowerSW_OFF
 
-[*] --> 電源SW_OFF
-
-state 電源SW_OFF {
-  [*] --> 待機
-  待機 --> 電源SW_ON : 電源SWがONになる
+state PowerSW_OFF {
+  [*] --> Standby
+  Standby --> PowerSW_ON : PowerSWがONになる
 }
 
-state 電源SW_ON {
-  state 右旋回 {
-    [*] --> 暗い
-    暗い --> 右旋回 : 光センサーが黒いライン上にある
-    右旋回 --> 明るい : 光センサーがラインを外れる
-    明るい --> 左旋回 : 光センサーが黒いライン上に戻る
+state PowerSW_ON {
+  state RightTurn {
+    [*] --> Dark
+    Dark --> RightTurn : 光センサーが黒いライン上にある
+    RightTurn --> Bright : 光センサーがラインを外れる
+    Bright --> LeftTurn : 光センサーが黒いライン上に戻る
   }
 
-  state 左旋回 {
-    [*] --> 明るい
-    明るい --> 左旋回 : 光センサーがラインを外れる
-    左旋回 --> 暗い : 光センサーが黒いライン上に戻る
-    暗い --> 右旋回 : 光センサーがラインを外れる
+  state LeftTurn {
+    [*] --> Bright
+    Bright --> LeftTurn : 光センサーがラインを外れる
+    LeftTurn --> Dark : 光センサーが黒いライン上に戻る
+    Dark --> RightTurn : 光センサーがラインを外れる
   }
 
-  右旋回 --> 左旋回 : 光センサーがラインを外れる
-  左旋回 --> 右旋回 : 光センサーが黒いライン上にある
-  右旋回 --> 電源SW_OFF : 電源SWがOFFになる
-  左旋回 --> 電源SW_OFF : 電源SWがOFFになる
+  RightTurn --> LeftTurn : 光センサーがラインを外れる
+  LeftTurn --> RightTurn : 光センサーが黒いライン上にある
+  RightTurn --> PowerSW_OFF : PowerSWがOFFになる
+  LeftTurn --> PowerSW_OFF : PowerSWがOFFになる
 }
-
-@enduml
