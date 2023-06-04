@@ -1,7 +1,7 @@
 @startuml 自動販売機
 left to right direction
-actor 客 #CCBB00;line:blue;line.bold;
-actor ベンダー #CCBB00;line:Red;line.bold;
+actor 客 #f1f1f1;line:blue;line.bold;
+actor ベンダー #1f1f1f;line:Red;line.bold;
 rectangle  自動販売機 {
 usecase 料金投入
 usecase ボタンを押す
