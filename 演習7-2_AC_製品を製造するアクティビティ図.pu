@@ -1,0 +1,24 @@
+@startuml
+start
+:製品を販売する;
+if (在庫あり？) then (yes)
+  :在庫調査;
+else (no)
+  :在庫なし;
+endif
+:受注;
+:入金確認;
+:検収/支払い;
+:製造部門;
+:部品メーカー;
+:製品の製造;
+:在庫調査;
+if (在庫あり？) then (yes)
+  :営業部門;
+  :販売代理店;
+  :受注;
+else (no)
+  stop
+endif
+stop
+@enduml
